@@ -56,22 +56,3 @@ data all_staff;
     if emp then employee_type = "Employee";
     else if con then employee_type = "Contractor";
 run;
-
-
-/* Create a dataset containing only customers that appear in both datasets. */
-
-data sales;
-    input id amount;
-    datalines;
-1 100
-2 200
-3 300
-4 400
-5 500
-;
-run;
-
-
-data sales_subset;
-    set sales(firstobs=3 obs=5);
-run;
