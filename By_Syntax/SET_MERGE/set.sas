@@ -75,25 +75,3 @@ run;
 data sales_subset;
     set sales(firstobs=3 obs=5);
 run;
-
-
-/* There are 2 datasets in 2 different sheets.   */
-/* For each employee, get the average salary. */
-/* If the employee has more than 5 years’ experience, multiply the average salary by 2,  */
-/* otherwise, multiply the average salary by 1.5. Keep the new salaries in a new column. */
-
-
-proc import datafile="/home/u64453174/github/sheet1.xlsx"
-	out=sheet1
-	dbms=xlsx
-	replace;
-	getnames=yes;
-run;
-
-
-proc import datafile="/home/u64453174/github/sheet2.xlsx"
-	out=sheet2
-	dbms=xlsx
-	replace;
-	getnames=yes;
-run;
